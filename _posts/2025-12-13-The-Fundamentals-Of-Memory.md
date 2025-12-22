@@ -30,7 +30,7 @@ If you mistakenly place that `int64` at an odd memory address (say, splitting it
 
 To prevent this performance penalty, the Go compiler (and the hardware) enforces **Natural Alignment**. This leads to our first golden rule:
 
-> **The Golden Rule:** A data type of size $N$ usually demands to start at a memory address divisible by $N$.
+> **The Golden Rule:** A data type of size N usually demands to start at a memory address divisible by N.
 
 ## The Cast of Characters (Go Types)
 
@@ -120,6 +120,6 @@ type MyStruct struct {
 
 ```
 
-Mathematically, $1 + 8 = 9$. But if you run `unsafe.Sizeof(MyStruct{})`, Go will tell you it occupies **16 bytes**.
+Mathematically, `1 + 8 = 9`. But if you run `unsafe.Sizeof(MyStruct{})`, Go will tell you it occupies **16 bytes**.
 
 Where did the other 7 bytes go? They didn't disappear, they are "padding," a.k.a wasted memory. And in the next section, we are going to learn how to play "Struct Tetris" to reclaim that wasted space.

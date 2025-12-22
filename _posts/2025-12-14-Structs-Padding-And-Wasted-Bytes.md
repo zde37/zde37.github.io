@@ -12,7 +12,7 @@ type MyStruct struct {
 
 ```
 
-We expected this struct to weigh in at **9 bytes** ($1 + 8$). But when we asked Go (`unsafe.Sizeof`), it reported **16 bytes**.
+We expected this struct to weigh in at **9 bytes** (1 + 8). But when we asked Go (`unsafe.Sizeof`), it reported **16 bytes**.
 
 Where did those extra 7 bytes come from? Why is Go wasting nearly 50% of the memory for this struct?
 
