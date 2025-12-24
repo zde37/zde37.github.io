@@ -1,4 +1,4 @@
-# Part 3: The Hardware Reality (CPU Caches & False Sharing)
+# Part 3: The Hardware Reality (CPU Caches and False Sharing)
 
 ## Cache Lines & Atomics
 
