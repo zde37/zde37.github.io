@@ -1,0 +1,47 @@
+<div class="comments-section">
+  <h3>Comments</h3>
+  <script src="https://giscus.app/client.js"
+          data-repo="zde37/zde37.github.io"
+          data-repo-id="R_kgDOQtKpXg"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOQtKpXs4C0RPr"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+
+<script>
+  function updateGiscusTheme() {
+    const theme = document.documentElement.getAttribute('data-theme') || 'light';
+    const giscusTheme = theme === 'dark' ? 'dark' : 'light';
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage({
+        giscus: { setConfig: { theme: giscusTheme } }
+      }, 'https://giscus.app');
+    }
+  }
+
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.attributeName === 'data-theme') updateGiscusTheme();
+    });
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme']
+  });
+
+  window.addEventListener('message', function(event) {
+    if (event.origin === 'https://giscus.app') updateGiscusTheme();
+  });
+</script>

@@ -1,0 +1,10 @@
+{% if jekyll.environment == 'production' %}
+<script data-goatcounter="https://zde.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+{% endif %}
+
+{% if jekyll.environment != 'production' %}
+<script data-goatcounter="https://zde.goatcounter.com/count"
+        data-goatcounter-settings='{"allow_local": true}'
+        async src="//gc.zgo.at/count.js"></script>
+{% endif %}

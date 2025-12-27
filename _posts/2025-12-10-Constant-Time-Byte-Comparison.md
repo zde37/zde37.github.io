@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Cryptographic Security: Constant-Time Byte Comparison"
+description: "Learn how timing attacks work and why constant-time byte comparison is critical for cryptographic security in Go. Deep dive into Go's crypto package implementation."
+tags: [Go, Security, Cryptography]
+---
+
 # Cryptographic Security: Constant-Time Byte Comparison
 
 *Ever wondered what stands between your secret key comparison and a hacker with a stopwatch? Let's dive in.*

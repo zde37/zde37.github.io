@@ -1,12 +1,28 @@
 title: "ZDE Blog"
 author: "ZDE"
-description: "Cool tech stuffs" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+description: "Deep dives into Go (Golang) programming, memory optimization, and systems engineering" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+url: "https://zde37.github.io" # Your site URL
+baseurl: "" # Subpath of your site, leave empty if hosted at root
+
+# SEO and Social
+logo: /assets/images/logo.png
+social:
+  name: ZDE
+  links:
+    - https://twitter.com/zde37
+    - https://github.com/zde37
+
+# OpenGraph defaults
+og_image: /assets/images/logo.png
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
 email: "hi@zde37.com"
 twitter_username: "zde37"
 github_username: "zde37"
+
+# Analytics
+goatcounter: "zde"  # Your GoatCounter code (zde.goatcounter.com)
 #linkedin_username: "linkedinuser"
 #facebook_username: username
 #flickr_username: username
@@ -23,8 +39,15 @@ theme: "minima"
 rss: rss
 
 kramdown:
+  input: GFM
   syntax_highlighter_opts:
     disable: true
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  parse_block_html: true
     
 plugins:
   - jekyll-feed
@@ -39,4 +62,4 @@ defaults:
       path: ""
       type: post
     values:
-      tags: Other
+      tags: []

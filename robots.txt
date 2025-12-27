@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zde37.github.io/sitemap.xml

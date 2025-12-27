@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Part 1: The Fundamentals of Memory"
+description: "Understand memory alignment, CPU word sizes, and why your variables cost more than you think. First part of the Go memory optimization series."
+tags: [Go, Memory, Performance]
+---
+
 # Part 1: The Fundamentals of Memory
 
 ## The Hidden Cost of Your Variables

@@ -1,16 +1,279 @@
+/* ========================================
+   CSS Variables for Theming
+   ======================================== */
+:root {
+  /* Light mode colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-code: #f6f8fa;
+  --text-primary: #24292f;
+  --text-secondary: #57606a;
+  --text-link: #0969da;
+  --text-link-hover: #0550ae;
+  --border-color: #d0d7de;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent: #0969da;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --line-height-base: 1.6;
+  --line-height-heading: 1.25;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-code: #161b22;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --text-link: #58a6ff;
+  --text-link-hover: #79c0ff;
+  --border-color: #30363d;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --accent: #58a6ff;
+}
+
+/* Respect user's system preference if no manual selection */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-code: #161b22;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --text-link: #58a6ff;
+    --text-link-hover: #79c0ff;
+    --border-color: #30363d;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --accent: #58a6ff;
+  }
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: var(--line-height-base);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--text-link);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text-link-hover);
+}
+
+code {
+  font-family: var(--font-mono);
+  background-color: var(--bg-code);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 16px;
+  overflow-x: auto;
+  line-height: 1.45;
+  position: relative;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.85em;
+}
+
+.copy-code-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 12px;
+  font-size: 0.75em;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+pre:hover .copy-code-button {
+  opacity: 1;
+}
+
+.copy-code-button:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
 hr {
   margin-top: 30px;
   margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--border-color);
 }
 
-/* Post navigation links */
+/* ========================================
+   Dark Mode Toggle
+   ======================================== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-primary);
+}
+
+.theme-toggle .sun-icon {
+  display: none;
+}
+
+.theme-toggle .moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: none;
+}
+
+/* ========================================
+   Reading Progress Bar
+   ======================================== */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--bg-secondary);
+  z-index: 999;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* ========================================
+   Post Meta Enhancements
+   ======================================== */
+.post-meta {
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.read-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ========================================
+   Table of Contents
+   ======================================== */
+.toc-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+}
+
+.toc-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: var(--text-primary);
+}
+
+#toc {
+  margin: 0;
+  padding-left: 20px;
+}
+
+#toc li {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+#toc a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+#toc a:hover {
+  color: var(--text-link);
+}
+
+/* Nested TOC levels */
+#toc ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+/* ========================================
+   Post Navigation
+   ======================================== */
 .post_navi {
   display: flex;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  gap: 16px;
 }
 
 .post_navi-label {
   font-size: 0.8em;
   opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .post_navi .post_navi-item {
@@ -18,6 +281,15 @@ hr {
   width: 50%;
   position: relative;
   color: inherit !important;
+  transition: transform 0.2s ease;
+}
+
+.post_navi .post_navi-item:hover {
+  transform: translateX(4px);
+}
+
+.post_navi .nav_prev:hover {
+  transform: translateX(-4px);
 }
 
 .post_navi .nav_prev {
@@ -42,4 +314,174 @@ hr {
   transform: translateY(-50%);
   font-size: 2.5em;
   opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.post_navi-item:hover .post_navi-arrow {
+  opacity: 0.6;
+}
+
+/* ========================================
+   Tables
+   ======================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--bg-secondary);
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+tbody tr:hover {
+  background: var(--bg-secondary);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   Callout Boxes / Admonitions
+   ======================================== */
+.callout {
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg-secondary);
+}
+
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.callout.info {
+  border-left-color: #0969da;
+}
+
+.callout.warning {
+  border-left-color: #f85149;
+}
+
+.callout.tip {
+  border-left-color: #2da44e;
+}
+
+.callout.note {
+  border-left-color: #bf8700;
+}
+
+/* ========================================
+   Task Lists
+   ======================================== */
+.task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.task-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.task-list-item input[type="checkbox"] {
+  margin-top: 4px;
+}
+
+/* ========================================
+   Comments Section
+   ======================================== */
+.comments-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ========================================
+   Header & Navigation
+   ======================================== */
+.site-title {
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  font-size: 1.5em !important;
+}
+
+.site-nav {
+  display: none !important;
+}
+
+/* ========================================
+   Mobile Responsiveness
+   ======================================== */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .post_navi {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .post_navi .post_navi-item {
+    width: 100%;
+    padding: 0 2em;
+  }
+
+  .post_navi .nav_next {
+    text-align: left;
+  }
+
+  pre {
+    padding: 12px;
+    font-size: 0.85em;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
+
+  th, td {
+    padding: 8px 12px;
+  }
+
+  .toc-wrapper {
+    padding: 16px;
+  }
+}
+
+/* ========================================
+   Performance: Reduced Motion
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
