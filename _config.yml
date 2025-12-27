@@ -5,7 +5,7 @@ url: "https://zde37.github.io" # Your site URL
 baseurl: "" # Subpath of your site, leave empty if hosted at root
 
 # SEO and Social
-logo: /assets/images/logo.png
+logo: /assets/images/main_og.png
 social:
   name: ZDE
   links:
@@ -13,7 +13,7 @@ social:
     - https://github.com/zde37
 
 # OpenGraph defaults
-og_image: /assets/images/logo.png
+og_image: /assets/images/main_og.png
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
