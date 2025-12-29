@@ -412,6 +412,60 @@ tbody tr:last-child td {
 }
 
 /* ========================================
+   Series Navigation
+   ======================================== */
+.series-navigation {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.series-navigation h3 {
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
+  font-size: 1.1em;
+}
+
+.series-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: series-counter;
+}
+
+.series-item {
+  margin: 12px 0;
+  padding-left: 8px;
+}
+
+.series-item a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.series-item a:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+.series-item.active {
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg-primary);
+  padding: 8px 12px;
+  margin-left: -12px;
+  border-radius: 4px;
+  border-left: 3px solid var(--accent);
+}
+
+.series-item.active .current-part {
+  color: var(--text-primary);
+}
+
+/* ========================================
    Comments Section
    ======================================== */
 .comments-section {

@@ -3,6 +3,8 @@ layout: post
 title: "Breaking the Glass: A Deep Dive into Go's Unsafe Package (Part 2)"
 description: "Master pointer arithmetic in Go using unsafe. Learn the pointer arithmetic dance and understand the risks of uintptr conversions."
 tags: [Go, Unsafe, Memory, Performance]
+series: unsafe-package
+series_part: 2
 ---
 
 # Breaking the Glass: A Deep Dive into Go's Unsafe Package (Part 2)

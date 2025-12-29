@@ -93,7 +93,7 @@
     // Generate TOC
     const tocWrapper = document.createElement('div');
     tocWrapper.className = 'toc-wrapper';
-    tocWrapper.innerHTML = '<div class="toc-title">Table of Contents</div><ul id="toc"></ul>';
+    tocWrapper.innerHTML = '<div class="toc-title">📑 Table of Contents</div><ul id="toc"></ul>';
 
     const toc = tocWrapper.querySelector('#toc');
     let currentLevel = 2;
@@ -128,14 +128,8 @@
       currentLevel = level;
     });
 
-    // Insert TOC after first paragraph or heading
-    const firstHeading = postContent.querySelector('h1, h2');
-    const insertPoint = firstHeading ? firstHeading.nextElementSibling : postContent.firstChild;
-    if (insertPoint) {
-      insertPoint.parentNode.insertBefore(tocWrapper, insertPoint);
-    } else {
-      postContent.insertBefore(tocWrapper, postContent.firstChild);
-    }
+    // Insert TOC at the very beginning of post-content (right after share buttons in layout)
+    postContent.insertBefore(tocWrapper, postContent.firstChild);
 
     // Smooth scroll for TOC links
     toc.addEventListener('click', function(e) {

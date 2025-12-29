@@ -3,6 +3,8 @@ layout: post
 title: "Part 2: Structs, Padding, and Wasted Bytes"
 description: "Master struct padding in Go and learn how to optimize memory layout. Save RAM by reordering fields and understanding alignment requirements."
 tags: [Go, Memory, Performance, Optimization]
+series: memory-alignment
+series_part: 2
 ---
 
 # Part 2: Structs, Padding, and "Wasted" Bytes

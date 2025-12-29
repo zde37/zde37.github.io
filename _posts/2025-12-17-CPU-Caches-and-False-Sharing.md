@@ -3,6 +3,8 @@ layout: post
 title: "Part 3: CPU Caches and False Sharing"
 description: "Discover how CPU cache lines affect Go performance and learn to prevent false sharing in concurrent programs. Essential knowledge for high-performance Go applications."
 tags: [Go, Memory, Performance, Concurrency]
+series: memory-alignment
+series_part: 3
 ---
 
 # Part 3: The Hardware Reality (CPU Caches and False Sharing)

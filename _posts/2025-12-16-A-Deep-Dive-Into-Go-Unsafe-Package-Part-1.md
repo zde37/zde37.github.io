@@ -3,6 +3,8 @@ layout: post
 title: "Breaking the Glass: A Deep Dive into Go's Unsafe Package (Part 1)"
 description: "Learn when and how to use Go's unsafe package. Understand the difference between *T, unsafe.Pointer, and uintptr, plus GC visibility rules."
 tags: [Go, Unsafe, Memory, Performance]
+series: unsafe-package
+series_part: 1
 ---
 
 # Breaking the Glass: A Deep Dive into Go's Unsafe Package (Part 1)

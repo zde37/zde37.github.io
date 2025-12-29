@@ -3,6 +3,8 @@ layout: post
 title: "Part 4: The Hidden Headers (Strings, Slices, Interfaces, and Maps)"
 description: "Explore Go's internal memory layout for strings, slices, interfaces, and maps. Understand how these complex types work under the hood."
 tags: [Go, Memory, Internals]
+series: memory-alignment
+series_part: 4
 ---
 
 # Part 4: The Hidden Headers (Strings, Slices, Interfaces, and Maps)

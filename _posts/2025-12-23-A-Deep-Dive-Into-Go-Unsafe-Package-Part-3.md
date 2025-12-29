@@ -3,6 +3,8 @@ layout: post
 title: "Breaking the Glass: A Deep Dive into Go's Unsafe Package (Part 3)"
 description: "Explore zero-copy performance wins with unsafe in Go and learn about architectural pitfalls that cause silent data corruption. Final part of the unsafe series."
 tags: [Go, Unsafe, Memory, Performance, Optimization]
+series: unsafe-package
+series_part: 3
 ---
 
 # Breaking the Glass: A Deep Dive into Go's Unsafe Package (Part 3)
