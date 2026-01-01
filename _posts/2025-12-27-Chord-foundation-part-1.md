@@ -4,7 +4,7 @@ title: "The Ring and Consistent Hashing: Chord's Foundation"
 description: "Master the core concepts behind the Chord DHT protocol. Understand why consistent hashing uses a ring topology and how it minimizes data movement in distributed systems."
 tags: [Go, DistributedSystems, DHT, Chord, Algorithms]
 series: torus-dht
-series_part: 2
+series_part: 2.0
 ---
 
 # The Ring and Consistent Hashing: Chord's Foundation
