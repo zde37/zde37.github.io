@@ -3,6 +3,7 @@ layout: post
 title: "The Great Regression: How Quality Died While We Were Told Things Were Getting Better"
 description: "A critical examination of how quality has systematically declined across software, healthcare, manufacturing, construction, education, and beyond, while being marketed as progress".
 tags: [Software, Tech, Culture, Quality]
+image: /assets/images/great_regression_og.png
 ---
 
 # The Great Regression: How Quality Died While We Were Told Things Were Getting Better
